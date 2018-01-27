@@ -1,0 +1,102 @@
+.container-header {
+  background-image: url("../images/contact-us.jpg");
+  background-size: cover;
+  height: 500px;
+  margin-bottom: 25px;
+}
+
+.contact-form {
+  border: 1px solid grey;
+  border-radius: 7px;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+
+.container-radioBtns {
+  border: 1px solid #cccccc;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+  height: 38px;
+  margin-top: 32px;
+}
+
+.header-title-container {
+  display: flex;
+  justify-content: left;
+  padding-left: 30px;
+}
+
+.header-title {
+  margin-top: 150px;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-left: 30px;
+}
+
+.header-text {
+  font-size: 20px;
+  color: white;
+}
+
+.btn-faq-contact-container {
+  display: flex;
+  justify-content: start;
+  padding-left: 30px;
+}
+
+.btn-faq-contact-item {
+  background-color: #3e7686;
+  border: 1px solid #26606d;
+}
+
+.container-faq {
+  margin-bottom: 50px;
+}
+
+.title-faq {
+  margin-bottom: 50px;
+}
+
+.faq-btn-style {
+  width: 100%;
+  text-align: left;
+  font-size: 22px;
+  background-color: #eeeeee;
+}
+
+.card-header {
+  background-color: #cccccc;
+}
+
+
+/* FOOTER STYLING */
+.card-footer-style {
+  width: 100%;
+  background-color: white;
+}
+
+.container-footer {
+  background-color: #dddddd;
+}
+.footer-style {
+  background-color: #dddddd;
+  border-top: 1px solid #bbbbbb;
+}
+
+.facebook,
+.twitter,
+.vimeo,
+.instagram {
+  color: #eb37cb;
+}
+
+.footer-legalline {
+  background-color: #cccccc;
+  border-top: 2px solid #bbbbbb;
+  border-bottom: 2px solid #bbbbbb;
+}

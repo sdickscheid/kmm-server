@@ -1,0 +1,165 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.container-header {
+  background-image: url("../images/k-mitchell-media-about-us-img.jpg");
+  background-size: cover;
+  height: 500px;
+  /* margin-bottom: 25px; */
+}
+
+.header-title-container {
+  display: flex;
+  justify-content: left;
+  padding-left: 30px;
+}
+
+.header-title {
+  margin-top: 150px;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-left: 30px;
+}
+
+.header-text {
+  font-size: 20px;
+  color: white;
+}
+
+.btn-hero-container {
+  display: flex;
+  justify-content: start;
+  padding-left: 30px;
+}
+
+.btn-hero-item {
+  background-color: #3e7686;
+  border: 1px solid #26606d;
+}
+
+.send-msg-icon {
+  padding-right: 10px;
+}
+
+/* COMPANY DESCRIPTION */
+.row-comp-desc {
+  /* background-color: #eeeeee; */
+}
+
+.section-header-container {
+  margin-bottom: 10px;
+}
+
+.section-header {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+
+#comp-desc-text {
+  padding: 10px;
+}
+.section-text {
+  font-size: 18px;
+}
+
+.vvv-background {
+  background-color: #eeeeee;
+  padding: 20px;
+  margin: 50px 0;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+}
+
+.card-style {
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+#process-subtitle {
+  margin-bottom: 30px;
+}
+
+.vvv-icon {
+  margin-right: 10px;
+  color: #eb37cb;
+}
+
+.company-description-section {
+  margin-top: 15px;
+}
+
+.company-description-text {
+  /* padding-right: 5px; */
+  font-size: 20px;
+  /* border: 1px solid; #dddddd; */
+  border-radius: 7px;
+  flex-direction: column;
+}
+
+.kathryn-image-container {
+  padding: 0 !important;
+}
+
+.kathryn-bwImg-about {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-katheryn-text {
+  padding-right: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.kathryn-video-section {
+  /* padding: 25px; */
+    margin-top: 25px;
+    /* background-image: url("../public/blue_bottles.jpg");
+    background-size: cover; */
+}
+
+.process-icon {
+  padding-right: 10px;
+  color: #eb37cb;
+}
+
+
+/* FOOTER STYLING */
+.card-footer-style {
+  width: 100%;
+  background-color: white;
+}
+
+.container-footer {
+  background-color: #dddddd;
+}
+.footer-style {
+  background-color: #dddddd;
+  border-top: 1px solid #bbbbbb;
+}
+
+.facebook,
+.twitter,
+.vimeo,
+.instagram {
+  color: #eb37cb;
+}
+
+.footer-legalline {
+  background-color: #cccccc;
+  border-top: 2px solid #bbbbbb;
+  border-bottom: 2px solid #bbbbbb;
+}

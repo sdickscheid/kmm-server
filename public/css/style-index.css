@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  background-image: url("../public/alan-labisch-124449.jpg");
+  background-size: cover;
+  min-height: 100vh;
+} */
+
+/* IMAGE Container */
+.main-container {
+  background-image: url("../images/alan-labisch-124449.jpg");
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* NAVIGATION Container  */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  /* border: 1px solid white; */
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid red; */
+  /* width: 50%; */
+}
+
+.navbar-item {
+  color: black;
+  /* border: 1px solid white; */
+  padding: 5px 10px;
+  font-family: "Avenir Next";
+  font-size: 20px;
+}
+
+.navbar-item:hover {
+  color: #eb37cb;
+  text-decoration: none;
+}
+.navbar-item:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* BODY Container (Logo, Header, Content, Button) */
+.body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid red; */
+  margin: 0;
+  min-height: 100vh;
+}
+
+.logo-container {
+  /* DEBUG: border: 1px solid white; */
+  padding: 10px;
+  margin-top: auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  /* DEBUG: border: 1px solid white; */
+  margin-top: 25px;
+  width: 75%;
+}
+
+.body-item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+.header {
+  /* color: #eb37cb; Pink1 */
+  /* color: #07c1ff; Blue1 */
+  color: #07d9ff;
+  font-size: 42px;
+  font-family: "Apple Chancery";
+  text-align: center;
+}
+
+.index-content-container {
+  width: 70%;
+}
+
+.index-content {
+  color: #ffffff;
+  font-size: 24px;
+  font-family: "Avenir Next";
+  text-align: center;
+  margin-top: 10px;
+  /* border: 1px solid red; */
+  font-style: italic;
+}
+
+
+.view-reel-container {
+  /* margin-top: 10px; */
+  width: 375px;
+  /* DEBUG:  border: 1px solid grey; */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-view-reel {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #07c1ff;
+  border-radius: 8px !important;
+  color: white;
+  font-size: 22px;
+}
+
+.btn-view-reel:hover {
+  width: 100%;
+  background-color: #375d81;
+  border: 1px solid #eb37cb;
+  border-radius: 8px !important;
+  color: white;
+  font-size: 22px;
+}

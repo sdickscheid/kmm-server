@@ -1,0 +1,84 @@
+.container-header {
+  background-image: url("../images/slider.jpg");
+  background-size: cover;
+  height: 500px;
+  /* margin-bottom: 25px; */
+}
+
+.header-title-container {
+  display: flex;
+  justify-content: left;
+  padding-left: 30px;
+}
+
+.header-title {
+  margin-top: 150px;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-left: 30px;
+}
+
+.header-text {
+  font-size: 20px;
+  color: white;
+}
+
+.btn-hero-container {
+  display: flex;
+  justify-content: start;
+  padding-left: 30px;
+}
+
+.btn-hero-item {
+  background-color: #3e7686;
+  border: 1px solid #26606d;
+}
+
+.send-msg-icon {
+  padding-right: 10px;
+}
+
+.portfolio-item {
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+}
+
+.portfolio-card {
+  border: 1px solid #cccccc;
+}
+
+.portfolio-item-header {
+  text-align: center !important;
+  width: 100%;
+}
+
+/* FOOTER STYLING */
+.card-footer-style {
+  width: 100%;
+  background-color: white;
+}
+
+.container-footer {
+  background-color: #dddddd;
+}
+.footer-style {
+  background-color: #dddddd;
+  border-top: 1px solid #bbbbbb;
+}
+
+.facebook,
+.twitter,
+.vimeo,
+.instagram {
+  color: #eb37cb;
+}
+
+.footer-legalline {
+  background-color: #cccccc;
+  border-top: 2px solid #bbbbbb;
+  border-bottom: 2px solid #bbbbbb;
+}
