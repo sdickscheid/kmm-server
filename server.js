@@ -3,10 +3,14 @@ const path = require("path");
 const app = express();
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 8000;
+const cors = require("cors");
+const knex = require('./db/knex.js');
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
+
+app.use(cors())
 
 app.get('/', function(req, res){
   res.render('index');
@@ -21,7 +25,10 @@ app.get('/about', function(req, res){
 });
 
 app.get('/portfolio', function(req, res){
-  res.render('portfolio');
+  knex('projects').then((projects)=>{
+
+    res.render('portfolio', {projects: projects});
+  })
 });
 
 app.get('/services', function(req, res){

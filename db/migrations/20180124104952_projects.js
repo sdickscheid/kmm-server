@@ -4,14 +4,13 @@ exports.up = function(knex, Promise) {
     table.string('client_name');
     table.string('company');
     table.string('project_name');
-    table.string('date_published');
-    table.string('runtime');
+    table.string('published');
+    table.string('length');
     table.string('vimeo_id');
     table.text('description');
-    table.string('category_1');
-    table.string('category_2');
-    table.string('category_3');
-    table.string('category_4');
+    table.string('c1');
+    table.string('c2');
+    table.string('c3');
     table.timestamps(true, true);
   })
 };

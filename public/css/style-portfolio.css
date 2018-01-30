@@ -56,6 +56,10 @@
   width: 100%;
 }
 
+.card-header {
+  font-size: 20px;
+}
+
 /* FOOTER STYLING */
 .card-footer-style {
   width: 100%;

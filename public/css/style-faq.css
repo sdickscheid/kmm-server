@@ -35,7 +35,7 @@
 
 .btn-hero-item {
   background-color: #3e7686;
-  border: 1px solid #26606d;
+  border: 1px solid #26606d
 }
 
 .send-msg-icon {
@@ -48,13 +48,16 @@
 
 .faq-header {
   margin-bottom: 50px;
-  /* background-color: #eeeeee; revisit*/
 }
 
 .faq-btn-style {
   width: 100%;
   text-align: left;
   font-size: 22px;
+  background-color: #ffffff;
+}
+.faq-btn-style:hover {
+  background-color: #dddddd;
 }
 
 .section-title {
@@ -67,6 +70,14 @@
   padding: 0 !important;
 }
 
+.card-header {
+  background-color: white;
+  box-shadow: 1px 2px 0px 0px;
+}
+
+.btn {
+  white-space: inherit;
+}
 
 /* FOOTER STYLING */
 .card-footer-style {

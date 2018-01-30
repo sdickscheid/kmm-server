@@ -3,7 +3,7 @@ const knex = require("../db/knex.js");
 module.exports = {
   // GET ALL
   getAll: function(req, res) {
-    knex('projects').then((result) => {
+    knex('contacts').then((result) => {
 
       res.send(result)
     })
@@ -14,46 +14,62 @@ module.exports = {
 
   // GET ONE
   getOne: function(req, res){
-    knex('projects')
+    knex('contacts')
       .where('id', req.params.id)
       .then((result)=>{
 
-        res.render('profile', {project: result[0]});
+        res.render('contact', {contact: result[0]});
       })
       .catch((err) => {
         console.error(err)
       });
   },
 
-  // CREATE
+  // CREATE (ADMIN PANEL)
   create: function(req, res){
-
-    knex('projects')
+    knex('contacts')
       .insert({
-        client_name: req.body.client_name,
+        name: req.body.name,
         company: req.body.company,
-        project_name: req.body.project_name,
-        published: req.body.published,
-        length: req.body.length,
-        vimeo_id: req.body.vimeo_id,
-        description: req.body.description,
-        c1: req.body.c1,
-        c2: req.body.c2,
-        c3: req.body.c3
+        website: req.body.website,
+        email: req.body.email,
+        phone: req.body.phone,
+        client_status: req.body.client_status,
+        message: req.body.message
       }, "*")
       .then((result)=>{
-        console.log(result);
-        res.redirect("/projects")
+        console.log("ADMIN Results", result);
+        res.redirect("/contacts")
       })
       .catch((err) => {
         console.error(err)
       });
+  },
 
+  // CREATE (HTML FORM )
+  newContact: function(req, res){
+    knex('contacts')
+      .insert({
+        name: req.body.name,
+        company: req.body.company,
+        website: req.body.website,
+        email: req.body.email,
+        phone: req.body.phone,
+        client_status: req.body.client_status,
+        message: req.body.message
+      }, "*")
+      .then((result)=>{
+        console.log("HTML Results", result);
+        res.render("contact")
+      })
+      .catch((err) => {
+        console.error(err)
+      });
   },
 
   //DELETE
   delete: function(req, res){
-    knex('projects')
+    knex('contacts')
       .del()
       .where('id', req.params.id)
       .then((deletedItem)=>{
@@ -68,11 +84,11 @@ module.exports = {
 
   //EDIT
   edit: function(req, res){
-    knex('projects')
+    knex('contacts')
       .where('id', req.params.id)
       .then((result)=>{
 
-        res.render('edit', {project: result[0]})
+        res.render('edit', {contact: result[0]})
       })
       .catch((err) => {
         console.error(err)
@@ -81,12 +97,12 @@ module.exports = {
 
   //UPDATE
   update: function(req, res){
-    knex('projects')
+    knex('contacts')
       .update(req.body)
       .where('id', req.params.id)
       .then(()=>{
 
-        res.redirect('/project/'+req.params.id);
+        res.redirect('/contact/'+req.params.id);
       })
       .catch((err) => {
         console.error(err)
