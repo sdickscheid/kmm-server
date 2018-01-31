@@ -27,7 +27,6 @@
 
 .navbar-item {
   color: black;
-  /* border: 1px solid white; */
   padding: 5px 10px;
   font-family: "Avenir Next";
   font-size: 20px;
@@ -62,7 +61,6 @@
 .header-container {
   display: flex;
   justify-content: center;
-  /* DEBUG: border: 1px solid white; */
   margin-top: 25px;
   width: 75%;
 }
@@ -73,12 +71,9 @@
   align-items: flex-end;
 }
 
-
 .header {
-  /* color: #eb37cb; Pink1 */
-  /* color: #07c1ff; Blue1 */
   color: #07d9ff;
-  font-size: 42px;
+  font-size: 38px;
   font-family: "Apple Chancery";
   text-align: center;
 }
@@ -89,21 +84,17 @@
 
 .index-content {
   color: #ffffff;
-  font-size: 24px;
+  font-size: 22px;
   font-family: "Avenir Next";
   text-align: center;
   margin-top: 10px;
-  /* border: 1px solid red; */
   font-style: italic;
 }
 
-
 .view-reel-container {
-  /* margin-top: 10px; */
   width: 375px;
-  /* DEBUG:  border: 1px solid grey; */
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .btn-view-reel {
@@ -117,7 +108,8 @@
 
 .btn-view-reel:hover {
   width: 100%;
-  background-color: #375d81;
+  /* background-color: #07d9ff; */
+  background-color: #eb37cb;
   border: 1px solid #eb37cb;
   border-radius: 8px !important;
   color: white;

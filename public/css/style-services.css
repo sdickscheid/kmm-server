@@ -53,6 +53,11 @@
   align-self: start;
 }
 
+.btn-inquire:hover {
+  background-color: #eb37cb;
+  border: 1px solid #333333;
+}
+
 
 /* FOOTER STYLING */
 .card-footer-style {

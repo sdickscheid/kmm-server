@@ -10,6 +10,7 @@
 
 .my-navbar {
   background-color: #dddddd;
+  min-height: 80px;
 }
 
 .navbar-nav {
@@ -17,9 +18,8 @@
   margin-left: auto;
 }
 
-
 .header-title {
-  margin-top: 50px;
+  margin-top: 15px;
 }
 
 .thank-u-msg {
@@ -35,12 +35,12 @@
   color: white;
 }
 
-.btn-return {
+/* .btn-return {
   background-color: #3e7686;
   border: 1px solid #26606d;
   width: 200px;
   margin-top: 20px;
-}
+} */
 
 .send-msg-icon {
   padding-right: 10px;
@@ -50,13 +50,6 @@
   height: 300px;
   width: 300px;
 }
-
-
-
-
-
-
-
 
 /* FOOTER STYLING */
 .card-footer-style {
