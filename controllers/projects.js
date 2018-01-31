@@ -1,6 +1,24 @@
 const knex = require("../db/knex.js");
 
 module.exports = {
+
+  login: function(req, res){
+    knex('admins')
+      .where('email', req.body.email)
+      .then((admin)=>{
+        admin = admin[0];
+        if(!admin){
+          res.sendStatus(400);
+          return;
+        }
+        if(admin.password === req.body.password){
+          res.json(admin);
+        }else{
+          res.sendStatus(400);
+        }
+      })
+  },
+
   // GET ALL
   getAll: function(req, res) {
     knex('projects').then((result) => {
@@ -57,9 +75,7 @@ module.exports = {
       .del()
       .where('id', req.params.id)
       .then((deletedItem)=>{
-        res.status(200)
-
-        .send(deletedItem);
+        res.json(req.params.id);
       })
       .catch((err) => {
         console.error(err)
@@ -85,8 +101,10 @@ module.exports = {
       .update(req.body)
       .where('id', req.params.id)
       .then(()=>{
-
-        res.redirect('/project/'+req.params.id);
+        knex('projects')
+          .then((projects)=>{
+            res.json(projects);
+          })
       })
       .catch((err) => {
         console.error(err)

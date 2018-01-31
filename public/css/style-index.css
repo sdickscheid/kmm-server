@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-/* body {
-  background-image: url("../public/alan-labisch-124449.jpg");
-  background-size: cover;
-  min-height: 100vh;
-} */
 
 /* IMAGE Container */
 .main-container {
@@ -22,15 +17,12 @@
   display: flex;
   justify-content: center;
   padding: 5px;
-  /* border: 1px solid white; */
 }
 
 .navbar-menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid red; */
-  /* width: 50%; */
 }
 
 .navbar-item {

@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-header {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.my-navbar {
+  background-color: #dddddd;
+}
+
+.navbar-nav {
+  color: black;
+  margin-left: auto;
+}
+
+
+.header-title {
+  margin-top: 50px;
+}
+
+.thank-u-msg {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 25% 100px 25%;
+}
+
+.header-text {
+  font-size: 20px;
+  color: white;
+}
+
+.btn-return {
+  background-color: #3e7686;
+  border: 1px solid #26606d;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.send-msg-icon {
+  padding-right: 10px;
+}
+
+.contact-success {
+  height: 300px;
+  width: 300px;
+}
+
+
+
+
+
+
+
+
+/* FOOTER STYLING */
+.card-footer-style {
+  width: 100%;
+  background-color: white;
+}
+
+.container-footer {
+  background-color: #dddddd;
+}
+.footer-style {
+  background-color: #dddddd;
+  border-top: 1px solid #bbbbbb;
+}
+
+.facebook,
+.twitter,
+.vimeo,
+.instagram {
+  color: #eb37cb;
+}
+
+.footer-legalline {
+  background-color: #cccccc;
+  border-top: 2px solid #bbbbbb;
+  border-bottom: 2px solid #bbbbbb;
+}

@@ -3,6 +3,9 @@ const projects = require("../controllers/projects.js")
 const contacts = require("../controllers/contacts.js")
 module.exports = function(app){
 
+  // Login
+  app.post('/letmein', projects.login)
+
   // PROJECT MANAGEMENT ROUTES
   app.get('/projects', projects.getAll);
 
