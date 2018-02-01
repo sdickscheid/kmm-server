@@ -6,10 +6,10 @@
 }
 
 .contact-form {
-  border: 1px solid grey;
+  border: 1px solid #cccccc;
   border-radius: 7px;
   padding: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .container-radioBtns {
@@ -71,6 +71,18 @@
 
 .card-header {
   background-color: #cccccc;
+}
+
+.btn-form-submit {
+  background-color: #cccccc !important;
+  margin-top: 20px;
+  width: 200px;
+}
+
+.btn-form-submit:hover {
+  background-color: blue !important;
+  margin-top: 20px;
+  width: 200px;;
 }
 
 

@@ -35,7 +35,8 @@
 
 .btn-hero-item {
   background-color: #3e7686;
-  border: 1px solid #26606d
+  border: 1px solid #26606d;
+  width: 200px;
 }
 
 .send-msg-icon {
