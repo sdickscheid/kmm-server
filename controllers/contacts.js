@@ -60,7 +60,7 @@ module.exports = {
       }, "*")
       .then((result)=>{
         console.log("HTML Results", result);
-        res.render("contact")
+        res.render("thanks")
       })
       .catch((err) => {
         console.error(err)
