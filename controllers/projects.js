@@ -1,7 +1,27 @@
 const knex = require("../db/knex.js");
-
+const jwt = require("jsonwebtoken");
+const jwtSecret = "scott";
 module.exports = {
 
+  // Without JWT
+  // login: function(req, res){
+  //   knex('admins')
+  //     .where('email', req.body.email)
+  //     .then((admin)=>{
+  //       admin = admin[0];
+  //       if(!admin){
+  //         res.sendStatus(400);
+  //         return;
+  //       }
+  //       if(admin.password === req.body.password){
+  //         res.json(admin);
+  //       }else{
+  //         res.sendStatus(400);
+  //       }
+  //     })
+  // },
+
+  // With JWT
   login: function(req, res){
     knex('admins')
       .where('email', req.body.email)
@@ -12,7 +32,7 @@ module.exports = {
           return;
         }
         if(admin.password === req.body.password){
-          res.json(admin);
+          res.json({token: jwt.sign({admin}, jwtSecret)});
         }else{
           res.sendStatus(400);
         }
@@ -48,16 +68,16 @@ module.exports = {
 
     knex('projects')
       .insert({
-        client_name: req.body.client_name,
-        company: req.body.company,
-        project_name: req.body.project_name,
-        published: req.body.published,
-        length: req.body.length,
-        vimeo_id: req.body.vimeo_id,
-        description: req.body.description,
-        c1: req.body.c1,
-        c2: req.body.c2,
-        c3: req.body.c3
+        client_name: req.body.project.client_name,
+        company: req.body.project.company,
+        project_name: req.body.project.project_name,
+        published: req.body.project.published,
+        length: req.body.project.length,
+        vimeo_id: req.body.project.vimeo_id,
+        description: req.body.project.description,
+        c1: req.body.project.c1,
+        c2: req.body.project.c2,
+        c3: req.body.project.c3
       }, "*")
       .then((result)=>{
         console.log(result);
@@ -76,29 +96,17 @@ module.exports = {
       .where('id', req.params.id)
       .then((deletedItem)=>{
         res.json(req.params.id);
+
       })
       .catch((err) => {
         console.error(err)
       });
   },
 
-  //EDIT
-  edit: function(req, res){
-    knex('projects')
-      .where('id', req.params.id)
-      .then((result)=>{
-
-        res.render('edit', {project: result[0]})
-      })
-      .catch((err) => {
-        console.error(err)
-      });
-  },
-
-  //UPDATE
+  //UPDATE PROJECT WITH CHANGES TO DATA IN EDIT FORM
   update: function(req, res){
     knex('projects')
-      .update(req.body)
+      .update(req.body.edits)
       .where('id', req.params.id)
       .then(()=>{
         knex('projects')

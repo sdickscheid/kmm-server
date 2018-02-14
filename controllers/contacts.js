@@ -29,13 +29,13 @@ module.exports = {
   create: function(req, res){
     knex('contacts')
       .insert({
-        name: req.body.name,
-        company: req.body.company,
-        website: req.body.website,
-        email: req.body.email,
-        phone: req.body.phone,
-        client_status: req.body.client_status,
-        message: req.body.message
+        name: req.body.contact.name,
+        company: req.body.contact.company,
+        website: req.body.contact.website,
+        email: req.body.contact.email,
+        phone: req.body.contact.phone,
+        client_status: req.body.contact.client_status,
+        message: req.body.contact.message
       }, "*")
       .then((result)=>{
         console.log("ADMIN Results", result);
