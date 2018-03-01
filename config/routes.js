@@ -33,7 +33,6 @@ module.exports = function(app){
 function jwtAuth(req, res, next){
  //send as a query parameter!
  var token = req.body.token || req.query.token || req.headers['x-access-token'] || req.params.token;
- console.log("token is" + token);
  // decode token
  if (token) {
 
@@ -45,7 +44,6 @@ function jwtAuth(req, res, next){
        // if everything is good, save to request for use in other routes
        // req.decoded = req.session
        req.decoded = decoded;
-       console.log("request decoded" + req.decoded);
        next();
      }
    });
