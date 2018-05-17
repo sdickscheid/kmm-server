@@ -2,31 +2,33 @@
 const projects = require("../controllers/projects.js")
 const contacts = require("../controllers/contacts.js")
 const jwt = require("jsonwebtoken");
-const jwtSecret = "scott";
+const jwtSecret = "25728047-1765-4954-865f-dd014fe00b74";
 module.exports = function(app){
 
   // Login
   app.post('/letmein', projects.login)
 
-  app.get('/projects', projects.getAll);
-  app.get('/project/:id', projects.getOne);
+
 
   // HTML FORM - ADD CONTACT FORM DATA TO ADMIN PANEL
   app.post('/message', contacts.newContact);
 
   // PROTECTED ROUTES BELOW HERE
   app.use(jwtAuth);
+  app.get('/projects', projects.getAll);
+  app.get('/project/:id', projects.getOne);
   app.post('/projects', projects.create);
   app.delete('/delete/:id', projects.delete);
   app.post('/update/:id', projects.update);
 
   // ADMIN - CONTACT MANAGEMENT ROUTES
   app.get('/contacts', contacts.getAll);
-  app.get('/contact/:id', contacts.getOne);
   app.post('/contacts', contacts.create);
-  app.delete('/contact/delete/:id', contacts.delete);
-  app.get('/contact/edit/:id', contacts.edit);
-  app.post('/contact/update/:id', contacts.update);
+
+  // app.get('/contact/:id', contacts.getOne);
+  // app.delete('/contact/delete/:id', contacts.delete);
+  // app.get('/contact/edit/:id', contacts.edit);
+  // app.post('/contact/update/:id', contacts.update);
 
 }
 

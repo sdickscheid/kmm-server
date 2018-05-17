@@ -1,6 +1,6 @@
 const knex = require("../db/knex.js");
 const jwt = require("jsonwebtoken");
-const jwtSecret = "scott";
+const jwtSecret = "25728047-1765-4954-865f-dd014fe00b74";
 module.exports = {
 
   // Without JWT

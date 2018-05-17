@@ -1,8 +1,35 @@
+.navbar-toggler {
+  border: 1px solid #cccccc;
+}
+.navbar-toggler-icon {
+  background-image: url("../images/toggler-inner-image-white-sm.png");
+  height: 20px;
+  width: 20px;
+  margin: 5px 5px 5px 5px;
+}
+
 .container-header {
-  background-image: url("../images/home-img-video-production-media.jpg");
+  background-image: url("../images/k-mitchell-media-home-hero-3.jpg");
   background-size: cover;
   height: 500px;
 }
+
+@media screen and (max-width:640px){
+  .container-header {
+    background-image: url("../images/k-mitchell-media-home-hero-640x287.jpg");
+    background-size: cover;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width:1007px){
+  .container-header {
+    background-image: url("../images/k-mitchell-media-home-hero-1007x452.jpg");
+    background-size: cover;
+    height: 500px;
+  }
+}
+
 
 .header-title-container {
   display: flex;

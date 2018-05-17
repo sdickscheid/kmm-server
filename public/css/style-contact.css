@@ -1,3 +1,14 @@
+.navbar-toggler {
+  border: 1px solid white;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../images/toggler-inner-image-white-sm.png");
+  height: 20px;
+  width: 20px;
+  margin: 5px 5px 5px 5px;
+}
+
 .container-header {
   background-image: url("../images/contact-us.jpg");
   background-size: cover;

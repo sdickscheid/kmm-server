@@ -1,3 +1,14 @@
+.navbar-toggler {
+  border: 1px solid white;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../images/toggler-inner-image-white-sm.png");
+  height: 20px;
+  width: 20px;
+  margin: 5px 5px 5px 5px;
+}
+
 .container-header {
   background-image: url("../images/k-mitchell-media-about-us-img.jpg");
   background-size: cover;
@@ -103,11 +114,9 @@
   padding: 0 !important;
 }
 
-.kathryn-bwImg-about {
-  max-width: 100%;
-  height: auto;
+.about-kathryn {
+  background-color: #f7f7f7;
 }
-
 .about-katheryn-text {
   padding-right: 10px;
   border-radius: 5px;
