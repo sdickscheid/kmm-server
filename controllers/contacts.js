@@ -4,7 +4,6 @@ module.exports = {
   // GET ALL
   getAll: function(req, res) {
     knex('contacts').then((result) => {
-
       res.send(result)
     })
     .catch((err) => {
@@ -36,9 +35,8 @@ module.exports = {
         phone: req.body.phone,
         client_status: req.body.client_status,
         message: req.body.message
-      }, "*")
+      })
       .then((result)=>{
-        console.log("ADMIN Results", result);
         res.redirect("/contacts")
       })
       .catch((err) => {
@@ -59,7 +57,6 @@ module.exports = {
         message: req.body.message
       }, "*")
       .then((result)=>{
-        console.log("HTML Results", result);
         res.render("thanks")
       })
       .catch((err) => {
@@ -67,16 +64,12 @@ module.exports = {
       });
   },
 
-  //DELETE
+  //DELETE ADMIN PANEL
   delete: function(req, res){
     knex('contacts')
       .del()
       .where('id', req.params.id)
-      .then((deletedItem)=>{
-        res.status(200)
-
-        .send(deletedItem);
-      })
+      .then(() => res.json(req.params.id))
       .catch((err) => {
         console.error(err)
       });
@@ -95,14 +88,15 @@ module.exports = {
       });
   },
 
-  //UPDATE
+  //UPDATE ADMIN PANEL
   update: function(req, res){
     knex('contacts')
       .update(req.body)
       .where('id', req.params.id)
       .then(()=>{
-
-        res.redirect('/contact/'+req.params.id);
+        knex('contacts')
+        .select()
+        .then(contactList => res.json(contactList))
       })
       .catch((err) => {
         console.error(err)

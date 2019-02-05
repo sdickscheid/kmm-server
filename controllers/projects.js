@@ -60,7 +60,6 @@ module.exports = {
         c3: req.body.c3
       }, "*")
       .then((result)=>{
-        console.log(result);
         res.redirect("/projects")
       })
       .catch((err) => {
