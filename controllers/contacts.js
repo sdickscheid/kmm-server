@@ -1,4 +1,9 @@
 const knex = require("../db/knex.js");
+const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail');
+const { TO_EMAIL_ADDRESS, SENDGRID_API_KEY } = process.env;
+sgMail.setApiKey(SENDGRID_API_KEY);
+const moment = require('moment');
 
 module.exports = {
   // GET ALL
@@ -24,6 +29,11 @@ module.exports = {
       });
   },
 
+  // SEND CONTACT TO EMAIL
+
+  sendMail(contact) {
+  },
+
   // CREATE (ADMIN PANEL)
   create: function(req, res){
     knex('contacts')
@@ -46,18 +56,47 @@ module.exports = {
 
   // CREATE (HTML FORM )
   newContact: function(req, res){
+    const { 
+      name,
+      company,
+      website,
+      email,
+      phone,
+      client_status,
+      message
+    } = req.body;
     knex('contacts')
       .insert({
-        name: req.body.name,
-        company: req.body.company,
-        website: req.body.website,
-        email: req.body.email,
-        phone: req.body.phone,
-        client_status: req.body.client_status,
-        message: req.body.message
+        name,
+        company,
+        website,
+        email,
+        phone,
+        client_status,
+        message,
+        followUp_date: client_status === 'New Client' ? moment(new Date()).add(7, 'days') : moment(new Date())
       }, "*")
-      .then((result)=>{
-        res.render("thanks")
+      .then(() => {
+        const msg = {
+          to: TO_EMAIL_ADDRESS,
+          from: email,
+          subject: 'New contact registered',
+          text: `
+          Name: ${name}
+          Phone number: ${phone}
+          Client status: ${client_status}
+          Comments: ${message}`,
+          // html: '<strong>and easy</strong'
+        }
+        sgMail.send(msg, (error, result) => {
+          if(error) {
+            console.log("ERROR", error.toString())
+          }
+          else {
+            console.log("EMAIL SENT SUCCESSFULLY")
+          }
+        });
+        res.render("thanks");
       })
       .catch((err) => {
         console.error(err)
