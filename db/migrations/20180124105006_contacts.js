@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     table.string('phone');
     table.string('client_status');
     table.text('message');
-    table.string('followUp_date');
+    table.datetime('followUp_date');
     table.string('followUp_status');
     table.string('promo_offerred');
     table.string('promo_discount');
