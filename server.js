@@ -23,7 +23,9 @@ app.get('/home', function(req, res){
 });
 
 app.get('/about', function(req, res){
-  res.render('about');
+  knex('crew').then(crew => {
+    res.render('about', {crewmembers: crew});
+  })
 });
 
 app.get('/portfolio', function(req, res){

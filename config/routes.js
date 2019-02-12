@@ -1,6 +1,8 @@
 //Update the name of the controller below and rename the file.
 const projects = require("../controllers/projects.js")
 const contacts = require("../controllers/contacts.js")
+const crew = require("../controllers/crew");
+
 module.exports = function(app){
 
   // Login
@@ -18,6 +20,9 @@ module.exports = function(app){
   app.get('/edit/:id', projects.edit);
 
   app.post('/update/:id', projects.update);
+
+  // CREW ROUTE
+  app.get('/crew', crew.getCrew);
 
 
   // CONTACT MANAGEMENT ROUTES

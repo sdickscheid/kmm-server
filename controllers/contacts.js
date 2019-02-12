@@ -44,6 +44,7 @@ module.exports = {
         email: req.body.email,
         phone: req.body.phone,
         client_status: req.body.client_status,
+        followUp_date: moment(new Date()).add(7, 'days'),
         message: req.body.message
       })
       .then((result)=>{
