@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(cors())
 
 app.get('/', function(req, res){
-  res.render('index');
+  res.redirect('/home');
 });
 
 app.get('/home', function(req, res){
