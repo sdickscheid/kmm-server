@@ -38,7 +38,7 @@
               <a class="active nav-link text-white" href="/portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="/services">Services</a>
+              <a class="nav-link text-white" href="/services">Services and Testimonials</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="/faq">FAQ</a>
@@ -66,7 +66,7 @@
       </div>
       <div class="row">
         <div class="col-12 btn-hero-container">
-            <a class="btn btn-primary btn-lg btn-hero-item" role="button" href="./contact.html">Contact Us</a>
+            <a class="btn btn-primary btn-lg btn-hero-item" role="button" href="/contact">Contact Us</a>
         </div>
       </div>
     </div>
@@ -94,11 +94,11 @@
 
         <a class="nav-item nav-link" id="nav-campaign-tab" data-toggle="tab" href="#nav-campaign" role="tab" aria-controls="nav-campaign" aria-selected="false">Campaign</a>
 
-        <a class="nav-item nav-link" id="nav-commercial-tab" data-toggle="tab" href="#nav-commercial" role="tab" aria-controls="nav-commercial" aria-selected="false">Commercial</a>
+        <!-- <a class="nav-item nav-link" id="nav-commercial-tab" data-toggle="tab" href="#nav-commercial" role="tab" aria-controls="nav-commercial" aria-selected="false">Commercial</a> -->
 
-        <a class="nav-item nav-link" id="nav-corporate-tab" data-toggle="tab" href="#nav-corporate" role="tab" aria-controls="nav-corporate" aria-selected="false">Corporate</a>
+        <!-- <a class="nav-item nav-link" id="nav-corporate-tab" data-toggle="tab" href="#nav-corporate" role="tab" aria-controls="nav-corporate" aria-selected="false">Corporate</a> -->
 
-        <a class="nav-item nav-link" id="nav-documentary-tab" data-toggle="tab" href="#nav-documentary" role="tab" aria-controls="nav-documentary" aria-selected="false">Documentary</a>
+        <!-- <a class="nav-item nav-link" id="nav-documentary-tab" data-toggle="tab" href="#nav-documentary" role="tab" aria-controls="nav-documentary" aria-selected="false">Documentary</a> -->
 
         <a class="nav-item nav-link" id="nav-instructional-tab" data-toggle="tab" href="#nav-instructional" role="tab" aria-controls="nav-instructional" aria-selected="false">DIY</a>
 
@@ -205,7 +205,7 @@
       <div class="tab-pane fade" id="nav-audition" role="tabpanel" aria-labelledby="nav-contact-tab">
         <div class="row mb-4">
           <% for(var i = 0; i<projects.length; i++){ %>
-            <% if(projects[i].c2 == "Audition" || projects[i].c3 == "Audition"){ %>
+            <% if(projects[i].c2 == "Audition/Talent" || projects[i].c3 == "Audition/Talent"){ %>
             <div class="col-md-6">
               <div class="card portfolio-item flex-md-row mb-2">
                 <div class="card-body d-flex flex-column align-items-start">
@@ -290,141 +290,6 @@
         </div>
       </div>
       <!-- End Campaign Content -->
-
-      <!-- Start Commercial Content -->
-      <div class="tab-pane fade" id="nav-commercial" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <div class="row mb-4">
-          <% for(var i = 0; i<projects.length; i++){ %>
-            <% if(projects[i].c2 == "Commercial" || projects[i].c3 == "Commercial"){ %>
-            <div class="col-md-6">
-              <div class="card portfolio-item flex-md-row mb-2">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h3 class="card-header display-6 text-muted mb-2 portfolio-item-header">
-                    <%= projects[i].project_name %>
-                  </h3>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe
-                      class="embed-responsive-item"
-                      src="https://player.vimeo.com/video/<%=projects[i].vimeo_id%>?title=0&byline=0&portrait=0"
-                      frameborder="2"
-                      webkitallowfullscreen
-                      mozallowfullscreen
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                  <div class="card-footer card-footer-style">
-                    <p>
-                      <span><strong>Client:</strong> <%= projects[i].client_name %></span>
-                      <span class="float-right"><strong>Date:</strong> <%= projects[i].published %></span>
-                      <br />
-                      <span><strong>Category:</strong>
-                        <% if(projects[i].c3) { %>
-                          <%= projects[i].c2%> | <%= projects[i].c3 %>
-                            <% } else { %>
-                            <%= projects[i].c2 %>
-                        <% } %>
-                      </span>
-                      <span class="float-right"><strong>Runtime:</strong> <%=projects[i].length%></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <% } %>
-          <% } %>
-        </div>
-      </div>
-      <!-- End Commercial Content -->
-
-      <!-- Start Corporate Content -->
-      <div class="tab-pane fade" id="nav-corporate" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <div class="row mb-4">
-          <% for(var i = 0; i<projects.length; i++){ %>
-            <% if(projects[i].c2 == "Corporate" || projects[i].c3 == "Corporate"){ %>
-            <div class="col-md-6">
-              <div class="card portfolio-item flex-md-row mb-2">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h3 class="card-header display-6 text-muted mb-2 portfolio-item-header">
-                    <%= projects[i].project_name %>
-                  </h3>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe
-                      class="embed-responsive-item"
-                      src="https://player.vimeo.com/video/<%=projects[i].vimeo_id%>?title=0&byline=0&portrait=0"
-                      frameborder="2"
-                      webkitallowfullscreen
-                      mozallowfullscreen
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                  <div class="card-footer card-footer-style">
-                    <p>
-                      <span><strong>Client:</strong> <%= projects[i].client_name %></span>
-                      <span class="float-right"><strong>Date:</strong> <%= projects[i].published %></span>
-                      <br />
-                      <span><strong>Category:</strong>
-                        <% if(projects[i].c3) { %>
-                          <%= projects[i].c2%> | <%= projects[i].c3 %>
-                            <% } else { %>
-                            <%= projects[i].c2 %>
-                        <% } %>
-                      </span>
-                      <span class="float-right"><strong>Runtime:</strong> <%=projects[i].length%></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <% } %>
-          <% } %>
-        </div>
-      </div>
-      <!-- End Corporate Content -->
-
-      <!-- Start Documentary Content -->
-      <div class="tab-pane fade" id="nav-documentary" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <div class="row mb-4">
-          <% for(var i = 0; i<projects.length; i++){ %>
-            <% if(projects[i].c2 == "Documentary" || projects[i].c3 == "Documentary"){ %>
-            <div class="col-md-6">
-              <div class="card portfolio-item flex-md-row mb-2">
-                <div class="card-body d-flex flex-column align-items-start">
-                  <h3 class="card-header display-6 text-muted mb-2 portfolio-item-header">
-                    <%= projects[i].project_name %>
-                  </h3>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe
-                      class="embed-responsive-item"
-                      src="https://player.vimeo.com/video/<%=projects[i].vimeo_id%>?title=0&byline=0&portrait=0"
-                      frameborder="2"
-                      webkitallowfullscreen
-                      mozallowfullscreen
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                  <div class="card-footer card-footer-style">
-                    <p>
-                      <span><strong>Client:</strong> <%= projects[i].client_name %></span>
-                      <span class="float-right"><strong>Date:</strong> <%= projects[i].published %></span>
-                      <br />
-                      <span><strong>Category:</strong>
-                        <% if(projects[i].c3) { %>
-                          <%= projects[i].c2%> | <%= projects[i].c3 %>
-                            <% } else { %>
-                            <%= projects[i].c2 %>
-                        <% } %>
-                      </span>
-                      <span class="float-right"><strong>Runtime:</strong> <%=projects[i].length%></span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <% } %>
-          <% } %>
-        </div>
-      </div>
-      <!-- End Documentary Content -->
 
       <!-- Start Instructional/DIY Content -->
       <div class="tab-pane fade" id="nav-instructional" role="tabpanel" aria-labelledby="nav-contact-tab">

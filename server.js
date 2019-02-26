@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8000;
 const cors = require("cors");
 const knex = require('./db/knex.js');
+require('dotenv').config();
+
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
@@ -13,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(cors())
 
 app.get('/', function(req, res){
-  res.render('index');
+  res.redirect('/home');
 });
 
 app.get('/home', function(req, res){
@@ -21,7 +23,9 @@ app.get('/home', function(req, res){
 });
 
 app.get('/about', function(req, res){
-  res.render('about');
+  knex('crew').then(crew => {
+    res.render('about', {crewmembers: crew});
+  })
 });
 
 app.get('/portfolio', function(req, res){
